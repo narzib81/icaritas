@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<lang>
+	<item name="apply">
+		<value xml:lang="ko"><![CDATA[적용]]></value>
+		<value xml:lang="en"><![CDATA[Apply]]></value>
+	</item>
+	<item name="apply_prompt">
+		<value xml:lang="ko"><![CDATA[현재 보고있는 화면으로 레이아웃 설정이 저장됩니다.\n적용하시겠습니까?]]></value>
+		<value xml:lang="en"><![CDATA[It will be saved to the current layout settings.\nAre you sure to apply?]]></value>
+	</item>
+	<item name="user_apply_prompt">
+		<value xml:lang="ko"><![CDATA[관리자로 로그인 하시면 현재 보고있는 화면으로 레이아웃 설정을 저장할 수 있습니다.]]></value>
+		<value xml:lang="en"><![CDATA[Sorry, Only administrators can save the settings.]]></value>
+	</item>
+	<item name="reset">
+		<value xml:lang="ko"><![CDATA[초기화]]></value>
+		<value xml:lang="en"><![CDATA[Reset]]></value>
+	</item>
+	<item name="reset_prompt">
+		<value xml:lang="ko"><![CDATA[처음 설치 했을 때 세팅으로 돌아갑니다.\n정말 초기화 하시겠습니까?]]></value>
+		<value xml:lang="en"><![CDATA[It will be restored to the factory settings.\nAre you sure to reset?]]></value>
+	</item>
+	<item name="user_reset_prompt">
+		<value xml:lang="ko"><![CDATA[관리자로 로그인 하시면 처음 설치 했을 때 세팅으로 되돌릴 수 있습니다.]]></value>
+		<value xml:lang="en"><![CDATA[Sorry, Only administrators can reset the settings.]]></value>
+	</item>
+</lang>

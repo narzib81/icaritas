@@ -1,0 +1,53 @@
+<!--%import("style.css")-->
+{@ $ws_more_url = trim($widgetstyle_extra_var->ws_more_url); }
+{@ $ws_more_text = trim($widgetstyle_extra_var->ws_more_text); }
+{@ $ws_more_image = trim($widgetstyle_extra_var->ws_more_image); }
+{@ $ws_title_url = trim($widgetstyle_extra_var->ws_title_url); }
+{@ $ws_title = trim($widgetstyle_extra_var->ws_title); }
+{@ $ws_title_image = trim($widgetstyle_extra_var->ws_title_image); }
+{@ $ws_colorset = trim($widgetstyle_extra_var->ws_colorset); }
+{@ $ws_custom_color = trim($widgetstyle_extra_var->ws_custom_color); }
+
+<style type="text/css">
+.ws_custom_color_bg {background-color:{$ws_custom_color} !important;} 
+.im_more:hover > a .ws_custom_color_t {color:{$ws_custom_color} !important; }
+</style>
+
+<div class="im_widgetStyle">
+   <div class="im_widget_header">
+      <div class="widget_title">
+         <a href="{$ws_title_url}">
+         <span class="label" cond="!$ws_title_image">{$ws_title}</span>
+         <span class="label" cond="$ws_title_image"><img src="{$ws_title_image}" alt="{$ws_title_alt}" /></span>
+         </a>
+      </div>
+      <div class="im_more">
+         <!--@if(strtolower(substr($ws_more_url,0,4))=='http')-->
+            <a href="{$ws_more_url}">
+         <!--@else-->
+            <a href="http://{$ws_more_url}">
+         <!--@end-->
+  	      <!--@if($ws_more_text || $ws_more_image) -->
+               <span class="label 
+                  <!--@if($ws_colorset =="blue")-->blue_t
+                  <!--@end-->
+                  <!--@if($ws_custom_color)-->ws_custom_color_t
+                  <!--@end-->
+                  " 
+                  cond="!$ws_more_image">{$ws_more_text}
+               </span>
+	            <span class="label" cond="$ws_more_image"><img src="{$ws_more_image}" alt="{$ws_more_alt}" /></span>
+         <!--@end-->                                                             
+               <span class="icon 
+                  <!--@if($ws_colorset =="blue")-->blue_bg
+                  <!--@end-->
+                  <!--@if($ws_custom_color)-->ws_custom_color_bg
+                  <!--@end-->">
+               </span>
+            </a>
+      </div>
+   </div>
+   <div class="im_widget_body">
+   {$widget_content}
+   </div>
+</div>

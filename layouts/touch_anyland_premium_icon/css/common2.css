@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+/*--- reset ---*/
+*{ margin:0; padding:0; }
+body { position:relative; color:#535353; font-size:1em; font-family:맑은 고딕,돋움,Gulimsans-serif; }
+div, p, ol, ul, li, img, a, h1, h2, h3, h4, h5, h6, form, span, iframe, dl, dt, dd { margin:0px; padding:0px; font-size:12px; font-family:맑은 고딕,돋움,Gulimsans-serif; }
+
+input, select, button { vertical-align:middle; }
+img { vertical-align:top; }
+input, select, textarea{ font-size:12px; font-family:맑은 고딕,돋움,Gulimsans-serif; color:#535353;}
+
+ul, ol, li, dl, dd, dt { margin:0; padding:0; list-style-type:none; }
+table, th, td { 	margin:0; padding:0; font-size:12px; font-family:맑은 고딕,돋움,Gulimsans-serif; border-collapse:collapse; color:#535353; }
+
+img { border:0; }
+legend {	position:absolute;	width:0;	height:0; font-size:0; overflow:hidden; }
+fieldset { margin:0; padding:0; border:none; }
+label { cursor:pointer; }
+address, em{ font-style:normal; }
+#skipNavi, hr, caption { visibility:hidden; position:absolute; width:0; height:0; font-size:0; overflow:hidden; text-indent:-9999px; line-height:0px; }
+
+a:link, a:active, a:visited { color:#535353; text-decoration:none; }
+a:hover { color:#535353; text-decoration:underline; }
+
+/*--- common class ---*/
+
+/* margin  */
+.mt15 { margin-top:15px; }
+
+/* width */
+
+/* font */
+
+/* align */
+.alignL { text-align:left !important; }
+.alignC { text-align:center !important; padding:0 !important; }
+.alignR { text-align:right; }
+.floatL { float:left; }
+.floatR { float:right !important; }
+.left5 { padding-left:5px !important; text-align:left !important; }
+.left10 { padding-left:10px !important; text-align:left !important; }
+.left15 { padding-left:15px; text-align:left !important; }
+.lineH20 { line-height:20px; }
+
+/* form */
+.check { margin-top:-2px; vertical-align:middle; }
+	*html .check { margin-top:0; }
+.radio { margin-top:-3px; vertical-align:middle; }
+	*html .radio { margin-top:-5px; }
+
+/* etc */
+.divBox { overflow:hidden; width:702px; }
+.type1 { padding-left:14px; color:#3e73b7; font-size:14px; line-height:16px; background:url('../img/common/bul/bul_02.gif') no-repeat 0 2px; }

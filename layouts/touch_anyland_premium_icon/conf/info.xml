@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.1">
+    <title xml:lang="ko">TOUCHMIND ANYLAND PREMIUM</title>
+    <title xml:lang="en">TOUCHMIND ANYLAND PREMIUM </title>
+    <description xml:lang="ko">
+        TOUCHMIND 애니랜드 프리미엄 레이아웃
+        디자인 : 신영빈	
+        퍼블리싱 : 신영빈
+        레이아웃 제작 : 신영빈
+    </description>
+    <description xml:lang="en">
+        TOUCHMIND ANYLAND PREMIUM Layout 
+        Designer : YoungBin Shin
+        HTML/CSS : YoungBin Shin
+        Layout producer : YoungBin Shin
+    </description>
+    <version>Xpress Engine 1.4.3.1</version>
+    <date>2011-05-28</date>
+
+    <author email_address="touchxe@gmail.com" link="http://www.touchmind.co.kr">
+        <name xml:lang="ko">YoungBin Shin</name>
+        <name xml:lang="en">YoungBin Shin</name>
+    </author>
+
+    <extra_vars>
+	
+	        <var name="use_banner" type="select">
+            <title xml:lang="ko">배너사용여부</title>
+            <title xml:lang="en">banner widget</title>
+            <description xml:lang="ko">배너사용여부를 선택해주세요.</description>
+            <description xml:lang="en">select weather use banenr widget.</description>
+			<options name="y">
+                <title xml:lang="ko">사용</title>
+                <title xml:lang="en">use</title>
+                <value>y</value>
+            </options>
+			<options name="n">
+                <title xml:lang="ko">사용하지 않음</title>
+                <title xml:lang="en">do not use</title>
+                <value>n</value>
+            </options>
+        </var>
+         <var name="logo_image" type="image">
+            <title xml:lang="ko">로고이미지</title>
+            <title xml:lang="en">Logo image</title>
+            <description xml:lang="ko">레이아웃의 상단에 표시될 로고이미지를 입력하세요</description>
+            <description xml:lang="en">Please input a logo image which will be displayed on the top of layout</description>
+        </var>
+		<var name="logo_footer_image" type="image">
+            <title xml:lang="ko">하단 로고이미지</title>
+            <title xml:lang="en">Footer Logo image</title>
+            <description xml:lang="ko">레이아웃의 상단에 표시될 로고이미지를 입력하세요</description>
+            <description xml:lang="en">Please input a logo image which will be displayed on the footer of layout</description>
+        </var>
+        <var name="index_url" type="text">
+            <title xml:lang="ko">홈 페이지 URL</title>
+            <title xml:lang="en">Homepage URL</title>
+            <description xml:lang="ko">로고를 클릭시에 이동할 홈 페이지 URL을 입력해 주세요</description>
+            <description xml:lang="en">Please input the URL to redirect when user clicks the logo</description>
+        </var>
+
+    </extra_vars>
+
+    <menus>
+        <menu name="main_menu" default="true">
+            <title xml:lang="ko">상단 메뉴</title>
+            <title xml:lang="en">Top menu</title>
+            <maxdepth>3</maxdepth>
+        </menu>
+    </menus>
+</layout>

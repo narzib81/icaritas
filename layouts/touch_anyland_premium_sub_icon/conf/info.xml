@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.1">
+    <title xml:lang="ko">TOUCHMIND ANYLAND PREMIUM SUB LAYOUT</title>
+    <title xml:lang="en">TOUCHMIND ANYLAND PREMIUM SUB LAYOUT </title>
+    <description xml:lang="ko">
+        TOUCHMIND 애니랜드 프리미엄 레이아웃 서브페이지
+        디자인 : 신영빈	
+        퍼블리싱 : 신영빈
+        레이아웃 제작 : 신영빈
+    </description>
+    <description xml:lang="en">
+        TOUCHMIND ANYLAND PREMIUM Sub Layout 
+        Designer : YoungBin Shin
+        HTML/CSS : YoungBin Shin
+        Layout producer : YoungBin Shin
+    </description>
+    <version>Xpress Engine 1.4.3.1</version>
+    <date>2011-05-28</date>
+
+    <author email_address="touchxe@gmail.com" link="http://www.touchmind.co.kr">
+        <name xml:lang="ko">YoungBin Shin</name>
+        <name xml:lang="en">YoungBin Shin</name>
+    </author>
+
+    <extra_vars>
+        <var name="layout_type" type="select">
+            <title xml:lang="ko">구성 선택</title>
+            <title xml:lang="en">Preference</title>
+            <description xml:lang="ko">원하시는 구성을 선택해주세요.</description>
+            <description xml:lang="en">Please select site preference you want.</description>
+			<options name="ec">
+                <title xml:lang="ko">위젯왼쪽정렬</title>
+                <title xml:lang="en">2col Style 1</title>
+                <value>ec</value>
+            </options>
+			<options name="ce">
+                <title xml:lang="ko">위젯오른쪽정렬</title>
+                <title xml:lang="en">2col Style 2</title>
+                <value>ce</value>
+            </options>
+        </var>
+        <var name="logo_image" type="image">
+            <title xml:lang="ko">로고이미지</title>
+            <title xml:lang="en">Logo image</title>
+            <description xml:lang="ko">레이아웃의 상단에 표시될 로고이미지를 입력하세요(너비150px에 높이 89px을 권장합니다.)</description>
+            <description xml:lang="en">Please input a logo image which will be displayed on the top of layout</description>
+        </var>
+		<var name="logo_footer_image" type="image">
+            <title xml:lang="ko">하단 로고이미지</title>
+            <title xml:lang="en">Footer Logo image</title>
+            <description xml:lang="ko">레이아웃의 상단에 표시될 로고이미지를 입력하세요(너비150px에 높이 89px을 권장합니다.)</description>
+            <description xml:lang="en">Please input a logo image which will be displayed on the footer of layout</description>
+        </var>
+	    <var name="banner_image" type="image">
+            <title xml:lang="ko">베너이미지</title>
+            <title xml:lang="en">Banner image</title>
+            <description xml:lang="ko">레이아웃의 메뉴아래에 표시될 베너이미지를 입력하세요</description>
+            <description xml:lang="en">Select a logo image which will be displayed on the bottom of GNB</description>
+        </var>
+        <var name="index_url" type="text">
+            <title xml:lang="ko">홈 페이지 URL</title>
+            <title xml:lang="en">Homepage URL</title>
+            <description xml:lang="ko">로고를 클릭시에 이동할 홈 페이지 URL을 입력해 주세요</description>
+            <description xml:lang="en">Please input the URL to redirect when user clicks the logo</description>
+        </var>
+		<var name="sns_url" type="text">
+            <title xml:lang="ko">소셜네트워크 페이지 URL</title>
+            <title xml:lang="en">SNS URL</title>
+            <description xml:lang="ko">소셜네트워크 위치에 보여질 URL을 입력해 주세요</description>
+            <description xml:lang="en">input the URL to redirect when user clicks the SNS Cover</description>
+        </var>
+		
+		<var name="rnb_widget1_url" type="text">
+            <title xml:lang="ko">위젯 1</title>
+            <title xml:lang="en">Input widget code URL</title>
+            <description xml:lang="ko">좌우측 메뉴부에 들어갈 위젯코드를 입력해 주세요.</description>
+            <description xml:lang="en">input the code which will display on left or right widget spot</description>
+        </var>
+		
+		<var name="rnb_widget2_url" type="text">
+            <title xml:lang="ko">위젯 2</title>
+            <title xml:lang="en">Input widget code URL</title>
+            <description xml:lang="ko">좌우측 메뉴부에 들어갈 위젯코드를 입력해 주세요.</description>
+            <description xml:lang="en">input the code which will display on left or right widget spot</description>
+        </var>
+		
+		<var name="rnb_widget3_url" type="text">
+            <title xml:lang="ko">위젯 3</title>
+            <title xml:lang="en">Input widget code URL</title>
+            <description xml:lang="ko">좌우측 메뉴부에 들어갈 위젯코드를 입력해 주세요.</description>
+            <description xml:lang="en">input the code which will display on left or right widget spot</description>
+        </var>
+		
+		<var name="rnb_widget4_url" type="text">
+            <title xml:lang="ko">위젯 4</title>
+            <title xml:lang="en">Input widget code URL</title>
+            <description xml:lang="ko">좌우측 메뉴부에 들어갈 위젯코드를 입력해 주세요.</description>
+            <description xml:lang="en">input the code which will display on left or right widget spot</description>
+        </var>
+		
+
+		
+		<var name="wid1_width" type="text">
+            <title xml:lang="ko">위젯공간의 너비</title>
+            <title xml:lang="en">Widget Number 1 Width</title>
+            <description xml:lang="ko">첫번째 위젯의 너비(기본=빈칸). 200px과 같이 px 혹은 %까지 적어주세요</description>
+            <description xml:lang="en">Please input the size to Widget Number 1</description>
+        </var>
+
+    </extra_vars>
+
+    <menus>
+        <menu name="main_menu" default="true">
+            <title xml:lang="ko">상단 메뉴</title>
+            <title xml:lang="en">Top menu</title>
+            <maxdepth>3</maxdepth>
+        </menu>
+    </menus>
+</layout>

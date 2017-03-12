@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon version="0.2">
+	<title xml:lang="ko">레이아웃 컨트롤박스 애드온</title>
+	<title xml:lang="en">Layout ControlBox Addon</title>
+	<description xml:lang="ko">
+		레이아웃 설정을 편리하게 할 수 있도록 도와주는 기능입니다.
+		관리자페이지에 들어가지 않고도 현재 보고 있는 화면의 레이아웃 설정을 변경하고 저장할 수 있습니다.
+		Treasurej와 Extrative, Wiley가 공동 개발하였습니다.
+	</description>
+	<description xml:lang="en">Layout Control Box Addon by Treasurej, Wiley, Extrative</description>
+	<version>1.0.1</version>
+	<date>2012-03-19</date>
+	<link>http://www.xecameron.com</link>
+	<author email_address="xepro@naver.com" link="http://www.xecameron.com">
+		<name xml:lang="ko">Treasurej</name>
+		<name xml:lang="en">Treasurej</name>
+	</author>
+	<extra_vars>
+		<var name="user_display" type="select">
+            <title xml:lang="ko">보이기</title>
+            <title xml:lang="en">Display</title>
+            <description xml:lang="ko">관리자만 보이기 / 항상 보이기</description>
+            <description xml:lang="en">Only Administrator / All</description>
+            <options value="N">
+                <title xml:lang="ko">관리자만 보이기</title>
+                <title xml:lang="en">Administrator</title>
+            </options>
+            <options value="Y">
+                <title xml:lang="ko">항상 보이기</title>
+                <title xml:lang="en">All</title>
+            </options>
+        </var>
+	</extra_vars>
+</addon>

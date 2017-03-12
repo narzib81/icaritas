@@ -1,0 +1,402 @@
+
+
+<!--// 레이아웃과 연동될 css 파일 import -->
+<!--%import("js/global.js")-->
+<!--%import("js/all.js")-->
+<!--%import("js/gnb.js")-->
+<!--%import("js/hoverIntent.js")-->
+<!--%import("css/common.css")-->
+<!--%import("css/layout.css")-->
+<!--%import("css/sub.css")-->
+
+
+
+
+
+<!--@if($layout_info->background_image)-->
+<style type="text/css">
+    body { background:url({$layout_info->background_image}); }
+</style>
+<!--@end-->
+
+<script>
+    // 북마크 추가
+    function bookmark(title,url){
+        if(document.all){ // 익스
+           window.external.AddFavorite(url, title);
+        }else if(window.sidebar){ // 파폭
+           window.sidebar.addPanel(title, url, "");
+        }else if(window.opera && window.print){ // 오페라
+              var obj = document.createElement('a');
+              obj.setAttribute('href',url);
+              obj.setAttribute('title',title);
+              obj.setAttribute('rel','sidebar');
+              obj.click();
+        }
+    }
+	// initialise plugins
+		jQuery(function(){
+			jQuery('ul.gnbMenu').superfish();
+		});
+
+</script>
+   <!--AJAX 로그인 창 시작-->
+    <!--@if(!$is_logged)-->
+        {@ $member_config = MemberModel::getMemberConfig(); }
+        <!--%import("filter/login.xml")-->
+        <!--@if($member_config->enable_openid=='Y')--><!--%import("filter/openid_login.xml")--><!--@end-->
+        <!-- loginWindow -->
+<div id="login_area">
+	<div class="login">
+		<form method="post" onsubmit="return procFilter(this, login)">
+			<fieldset>
+				<legend>로그인</legend>
+				<h2><img src="img/tit_login.gif" alt="LOGIN INFORMATION" /></h2>
+                <div id="login_close"></div>
+				<ul>
+                
+					<li>
+						<span><img src="img/txt_l_id.gif" alt="" /></span><input name="user_id"  type="text" />
+					</li>
+					<li>
+						<span><img src="img/txt_l_pwd.gif" alt="" /></span><input  name="password" type="password" />
+					</li>
+				</ul>
+				<div class="btn">
+                    <span><input  name="keep_signed" value="Y" type="checkbox" class="check" id="che_id" onclick="if(this.checked) return confirm('{$lang->about_keep_signed}');"/> <label for="che_id">정보유지</label></span>
+					<a href="#"><button type="submit" value="" class="submit"></button>
+					</a>
+				</div>
+				<div class="link">
+					<a href="<!--@if($layout_info->signup_mid)-->{getUrl('act','dispMemberSignUpForm','mid', $layout_info->signup_mid)}<!--@else-->{getUrl('act','dispMemberSignUpForm')}<!--@end-->">회원가입</a>  |  <a href="<!--@if($layout_info->signup_mid)-->{getUrl('act','dispMemberFindAccount','mid', $layout_info->signup_mid)}<!--@else-->{getUrl('act','dispMemberFindAccount')}<!--@end-->">비밀번호 찾기</a>  |  <a href="<!--@if($layout_info->signup_mid)-->{getUrl('act','dispMemberResendAuthMail','mid', $layout_info->signup_mid)}<!--@else-->{getUrl('act','dispMemberResendAuthMail')}<!--@end-->">인증확인</a>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>
+        <!-- /loginWindow -->
+    <!--@end-->
+    <!--AJAX 로그인 창 끝-->
+
+
+<div id="container_site">
+<ul id="skipNavi">
+    <li><a href="#header">주메뉴 바로가기</a></li>
+    <li><a href="#container">컨텐츠 바로가기</a></li>
+</ul>
+<div id="wrap">
+    <!-- header area -->
+    <div id="header">			
+        <h1 id="logo">        
+            <a href="{$layout_info->index_url}" target="_self">
+            <!--@if($layout_info->logo_image)-->
+                <img src="{$layout_info->logo_image}" class="iePngfix" alt="logo" />
+            <!--@else-->
+                Logo
+            <!--@end-->
+            </a>
+        </h1>	
+        <div id="utill_menu">
+        <div class="upBt"></div>
+        <!--@if($logged_info->is_admin == 'Y')-->
+        <div class="adminBt"><a href="{getUrl('','module','admin')}" ><img class="iePngFix" src="img/common/utill_admin.png" alt="ADMIN" /></a></div>
+        <!--@end-->
+            <ul class="col1">
+                <!--@if(!$is_logged)-->    
+
+                        <li class="loginbt"><a href="#" ><img class="iePngFix" src="img/common/utill_login.png" alt="LOGIN" /></a>
+                        </li>
+                        <li><a href="<!--@if($layout_info->signup_mid)-->{getUrl('act','dispMemberSignUpForm','mid', $layout_info->signup_mid)}<!--@else-->{getUrl('act','dispMemberSignUpForm')}<!--@end-->" ><img class="iePngFix" src="img/common/utill_join.png" alt="JOIN" /></a>
+                        </li>
+                        <li><a href="javascript:bookmark('default', 'http://www.touchmind.co.kr/')" ><img class="iePngFix" src="img/common/utill_favorit.png" alt="FAVORIT" /></a>
+                        </li>
+
+             <!--@else-->
+
+                        <li><a href="{getUrl('act','dispMemberLogout')}" ><img class="iePngFix" src="img/common/utill_logout.png" alt="LOGOUT" /></a>
+                        </li>
+                        <li><a href="{getUrl('act','dispMemberInfo')}" ><img class="iePngFix" src="img/common/utill_info.png" alt="USER INFORMATION" /></a>
+                        </li>
+                        <li><a href="javascript:bookmark('default', 'http://www.touchmind.co.kr/')" ><img class="iePngFix" src="img/common/utill_favorit.png" alt="FAVORIT" /></a>
+                        </li>
+                        <li>
+                        </li>
+
+            <!--@end-->
+
+            </ul>
+            <div class="col2">
+                <a href="#"><img src="img/common/utill_menu04.gif" alt="tweeter" /></a>
+                <a href="#"><img src="img/common/utill_menu05.gif" alt="facebook" /></a>                <a href="#"><img src="img/common/utill_menu06.gif" alt="Rss" /></a>
+            </div>
+        </div>
+        
+		<div id="utill_Down"> <img src="img/common/btn/btn_gnb_more.gif" alt="메뉴더보기" /></div>
+        
+        <div id="navi">	
+            <ul class="gnbMenu" >          
+            <!--@foreach($main_menu->list as $val)--><!--@if($val["link"])-->
+                <li class="depth1 <!--@if($val['selected'])-->{@$selected=$val;$category[]=$val;}ty1<!--@end-->">
+                    <a href="{$val['href']}" 
+                    <!--@if($val["open_window"]=="Y")--> onclick="window.open(this.href); return false;"<!--@end-->
+                    ><!--@if($val["text"] == $val["link"])--><span>{$val["text"]}</span><!--@else-->{$val["link"]}<!--@end--></a>
+                    <!--@if($val["list"])-->
+
+                    <ul >
+                        <!--@foreach($val["list"] as $v)--><!--@if($v["link"])-->
+                        <li class="<!--@if($v['selected'])-->{@$selected=$val;$category[]=$val;}ty1<!--@end-->" >
+                            <a href="{$v['href']}" class="<!--@if($v['selected'])-->{@$category[]=$v;} on<!--@end-->"<!--@if($v["open_window"]=="Y")--> onclick="window.open(this.href); return false;"<!--@end-->><!--@if($v["text"] == $v["link"])--><span>{$v["text"]}</span><!--@else-->{$v["link"]}<!--@end--></a>
+                            <!--@if($v["list"])-->
+
+                            <ul>
+                                <!--@foreach($v["list"] as $va)--><!--@if($va["link"])-->
+                                <li class="li3<!--@if($va['selected'])-->{@$category[]=$va;} on<!--@end-->">
+                                    <a href="{$va['href']}" class="a3"<!--@if($va["open_window"]=="Y")--> onclick="window.open(this.href); return false;"<!--@end-->><!--@if($va["text"] == $va["link"])--><span>{$va["text"]}</span><!--@else-->{$va["link"]}<!--@end--></a>
+                                </li>
+                                <!--@end--><!--@end-->
+                            </ul>
+
+                            <!--@end-->
+                        </li>
+                        <!--@end--><!--@end-->
+                    </ul>
+
+                    <!--@end-->
+                </li>
+                <!--@end--><!--@end-->
+          </ul>
+        </div>
+    </div>
+    <!-- //header area -->
+    
+    <!-- container area -->		
+		<div id="container">
+			<div id="content-area">
+				<div id="contents">					
+					<!-- visual area -->	
+					<div id="visual">
+                    
+                    <!--@if($layout_info->banner_image)-->
+                    <img src="{$layout_info->banner_image}" alt="" />
+                    
+                    <!--@else-->
+                    <img src="img/bg/bg_visual.jpg" alt="" />
+                    <!--@end-->
+
+                    </div>
+					<!-- //visual area -->		
+					<!-- location area -->	                   
+					<div id="location">
+                       <!--@foreach($main_menu->list as $key => $val)-->
+						<!--@if($val['selected'])-->
+                         <ul id="category">
+                         <li class="first"><a href="/main">HOME</a></li>
+                        <!--@if($val['selected']&&$val['list'])-->
+							<li ><a href="{$val['href']}" <!--@if($val['open_window']=='Y')-->onclick="window.open(this.href);return false;"<!--@end-->>{$val['text']}</a></li>
+                            <!--@foreach($val['list'] as $k => $v)--><!--@if($v['selected'])-->
+							<li><a href="{$val['href']}" <!--@if($val['open_window']=='Y')-->onclick="window.open(this.href);return false;"<!--@end-->>{$v['text']}</a></li>
+                            <!--@end-->
+						 <!--@end-->
+                         </ul>
+                         <!--@end-->
+                        <!--@end-->
+						<!--@end-->
+					
+                    <form action="{getUrl()}" method="post" >
+                        <input type="hidden" name="vid" value="{$vid}" />
+                        <input type="hidden" name="mid" value="{$mid}" />
+                        <input type="hidden" name="act" value="IS" />
+                        <input type="hidden" name="search_target" value="title_content" />
+                        <fieldset>
+                            <legend>검색</legend>
+                            <div id="search">
+                                        <input name="is_keyword" type="text" title="Search" class="inputText" accesskey="S" />
+                            </div>
+                        </fieldset>
+                    </form>
+					</div>
+					<!-- //location area -->		
+
+					<!-- content area -->		
+					<div id="content" 
+                    <!--@if($layout_info->layout_type=='ec')-->
+                        style="float:right"
+                    <!--@end-->>					
+						<div id="cont">
+							{$content}
+						</div>
+					</div>			
+					<!-- //content area -->		
+                    
+                    
+				    <!-- 왼쪽 컬럼 서브메뉴 시작 -->
+					<!-- rnb area -->		
+					<div id="rnb"     
+                    <!--@if($layout_info->wid1_width)-->
+        style="width:{$layout_info->wid1_width};"
+    <!--@else-->
+        
+    <!--@end-->>
+                    
+                    
+                    <div class="rnb_menu" >
+
+                    <h2><img src="img/tit_rnb_menu.gif" alt="애니랜드스토리" /></h2>
+                      <ul id="sub_nav">            
+                                   <!--@foreach($main_menu->list as $key => $val)--><!--@if($val['link'])-->
+           <!--@if($val['selected']&&$val['list'])-->
+           {@ $menu_1st = $val }                       
+           <li <!--@if($val['selected'])-->class="on"<!--@end-->>
+                
+                               <!-- main_menu 2차 시작 -->	
+                               <ul>
+                                   <!--@foreach($menu_1st['list'] as $key => $val)--><!--@if($val['link'])-->
+                                   {@ $menu_2nd = $val }
+                                   <li <!--@if($val['selected'])-->class="on"<!--@end-->><a href="{$val['href']}" <!--@if($val['open_window']=='Y')-->onclick="window.open(this.href);return false;"<!--@end-->>{$val['link']}</a>
+                
+<!--@if($val['list']&&$val['selected'])-->
+								<ul>
+								<!--@foreach($val['list'] as $key => $ve)-->
+                                <!--@if($ve['link'])--> 
+									<li ><a href="{$ve['href']}" <!--@if($ve['open_window']=='Y')-->onclick="window.open(this.href);return false;"<!--@end--><!--@if($ve['selected'])--> class="selectedsub"<!--@end-->>{$ve['text']}</a></li>
+									<!--@end-->
+                                    <!--@end-->
+								</ul><!--@end-->
+
+                                            
+                                   </li>
+                                   <!--@endif--><!--@endforeach-->
+                               </ul>
+                               <!-- main_menu 2차 끝 -->
+                
+                           </li>
+                           <!--@endif-->
+                           <!--@endif--><!--@endforeach-->
+                            
+                       </ul>
+                       <!-- 왼쪽 1차 메뉴 끝-->
+                    </div>
+                    <!-- 왼쪽 컬럼 서브메뉴 끝 -->
+    
+                    
+                  
+						<div><img src="img/bg/bg_rnb_line.gif" alt="" /></div>
+                        <div class="snsBt">
+                        <!--@if($layout_info->sns_url)-->
+                        {$layout_info->sns_url}
+                        <!--@end-->
+                        </div>
+						<div class="sns">
+							<p><a href="#"><img src="img/link_sns.gif" alt="Social Network" /></a></p>
+							<a href="#" class="btn_prev"><img src="img/btn/btn_s_up.gif" alt="이전" /></a>
+							<a href="#" class="btn_next"><img src="img/btn/btn_s_down.gif" alt="다음" /></a>
+						</div>
+
+                        <!--@if($layout_info->rnb_widget1_url)-->
+						<div class="recen recen_c">
+							<h2>Recently Comments</h2>
+                            <div class="con">{$layout_info->rnb_widget1_url}
+                            </div>
+						</div>
+                        <!--@end-->
+                        <!--@if($layout_info->rnb_widget2_url)-->
+						<div class="recen">
+							<h2>Recently Comments</h2>
+                            <div class="con">{$layout_info->rnb_widget2_url}</div>
+						</div>
+                        <!--@end-->
+                        <!--@if($layout_info->rnb_widget3_url)-->
+						<div class="recen recen_c">
+							<h2>Recently Comments</h2>
+                            <div class="con">{$layout_info->rnb_widget3_url}</div>
+						</div>
+                        <!--@end-->
+                        <!--@if($layout_info->rnb_widget4_url)-->
+						<div class="recen recen_c">
+							<h2>Recently Comments</h2>
+                            <div class="con">{$layout_info->rnb_widget4_url}</div>
+						</div>
+                        <!--@end-->
+                       <div style="padding:20px 0 10px 30px; border:1px solid #efefef; border-top:none;">
+                    <script src="http://widgetprovider.daum.net/view?url=http://widgetcfs1.daum.net/xml/36/widget/2008/09/22/11/21/48d70112bfc6f.xml&&width=166&height=160&widgetId=91&scrap=1" type="text/javascript"></script>
+                    </div>
+                        
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //container area -->
+        
+
+    <!-- footer area -->
+    <div id="footer">		
+        <div id="footerarea">
+        <div id="footerLogo">
+            <a href="{$layout_info->index_url}" target="_self">
+            <!--@if($layout_info->logo_footer_image)-->
+                <img src="{$layout_info->logo_footer_image}" class="iePngfix" alt="logo" />
+            <!--@else-->
+                footer_Logo
+            <!--@end-->
+            </a>
+        </div>
+            <div class="footer_menu">
+                <div class="notice">
+                    <h2><img src="img/common/tit_f_notice.gif" alt="Any Notice" /></h2>
+                    <div class="interviewImg">
+                    <img class="zbxe_widget_output" widget="newest_document" skin="anyland" order_target="list_order" order_type="desc" list_count="3" subject_cut_size="30" display_regdate="Y" module_srls="29746" />
+                    </div>
+                    <div class="btn mt15"><a href="#"><img src="img/common/btn/btn_f_notice.gif" alt="공지사항 보러가기" /></a></div>
+                </div>
+                <div class="interview">
+                    <h2><img src="img/common/tit_f_interview.gif" alt="Any interview" /></h2>
+                    <div class="interviewImg">
+                    <img class="zbxe_widget_output" widget="newest_images" skin="anyNewestImage" colorset="normal" thumbnail_type="crop" thumbnail_width="96" thumbnail_height="73" cols_list_count="2" rows_list_count="1" display_author="Y" display_regdate="N" display_readed_count="N" display_voted_count="N" module_srls="29746" />
+                    </div>
+                    <div class="btn"><a href="#"><img src="img/common/btn/btn_f_interview.gif" alt="인터뷰 더보기" /></a></div>
+                </div>
+                <div class="info">
+                    <h2><img src="img/common/tit_f_info.gif" alt="Contact Info" /></h2>
+                    <div class="desc">
+                        <a href="#"><img src="img/common/btn/btn_met01.gif" alt="facebook" /></a>
+                        <a href="#"><img src="img/common/btn/btn_met02.gif" alt="tweeter" /></a>
+                    </div>
+                    <div class="btn"><a href="#"><img src="img/common/link_f_info.gif" alt="click here for more contact Information" /></a></div>
+                </div>
+            </div>
+            <div class="sitemap">
+            
+            
+            <ul >
+
+                <!--@foreach($main_menu->list as $key => $val)-->
+                <!--@if($val['link'])-->
+				<li class="depth1">
+					<h2><a href="{$val['href']}"<!--@if($val['open_window']=='Y')--> onclick="window.open(this.href);return false;"<!--@end-->>{$val['text']}</a></h2>
+                    <!--@if($val['list'])-->
+					<ul class="depth2">
+                        <!--@foreach($val['list'] as $k => $v)-->
+                        <!--@if($val['link'])-->
+						<li><a href="{$v['href']}"<!--@if($v['open_window']=='Y')--> onclick="window.open(this.href);return false;"<!--@end-->>{$v['text']}</a></li>
+                        <!--@end-->
+                        <!--@end-->
+					</ul>
+                    <!--@end-->
+				</li>
+                <!--@end-->
+                <!--@end-->
+
+			</ul>
+            
+            
+            </div>
+
+        </div>
+    </div>
+    <!-- //footer area -->
+                <p class="copyright">COPYRIGHT (C) 2011 <a href="www.anyland.co.kr" target="_blank">www.anyland.co.kr</a> ALL RIGHT RESERVED</p>
+</div>
+
+    
+</div><!--container_site 끝-->

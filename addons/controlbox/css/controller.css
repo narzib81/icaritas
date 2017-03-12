@@ -1,0 +1,27 @@
+@charset "utf-8";
+.layout-controller{height:449px; background:url(../img/default/bg.png); font-family:"나눔고딕 Bold", ngb, "굴림"; color:#c3c3c3; z-index:9998}
+.layout-controller .slideout_btn{background:url(../img/default/button.png) -22px -16px !important}
+.layout-controller h2{margin:10px; padding:0; *line-height:1.8; font-family:"나눔고딕 Bold", ngb, "굴림"; font-size:15px; color:#fff}
+.layout-controller .slideout-content{position:relative; width:320px}
+.layout-controller .slideout-content form.content_form{margin:0; padding:0}
+
+.layout-controller .control-content{height:360px; margin:0 0 0 10px; overflow:auto}
+.layout-controller .control-content .group-title{border-bottom:1px solid #4a4949; padding:10px 0; *zoom:1}
+.layout-controller .control-content .group-title:after{clear:both; content:" "; display:block}
+.layout-controller .control-content .group-title span.title_text {float:left; color:#fff}
+.layout-controller .control-content .group-title span.toggle{width:14px; height:11px; float:right; margin-right:10px; display:block; background-image:url(../img/default/button.png)}
+.layout-controller .control-content .group-title span.close{background-position:-85px -62px}
+.layout-controller .control-content .group-title span.open{background-position:-110px -62px}
+.layout-controller .control-content span.filechoose{float:left; display:block }
+.layout-controller .control-content span.fileplus{float:left; width:11px; height:11px; display:block; background:url(../img/default/button.png) -135px -61px}
+
+.layout-controller .control-content table{margin:5px 0 10px 0}
+.layout-controller .control-content table th{width:100px; text-align:left; font-weight:normal}
+.layout-controller .control-content table td{width:172px; text-align:left}
+.layout-controller .control-content table td input{width:164px; margin:4px 0; padding:4px; background:#fff; border:0; border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px; font:11px Tahoma; color:#000;}
+.layout-controller .control-content table td textarea{width:164px; height:60px; margin:4px 0; padding:4px; background:#fff; border:0; border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px; font:11px Tahoma; color:#000;}
+.layout-controller .control-content table td select{margin:4px 0; padding:2px; background:#fff; border:0; border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px}
+
+.layout-controller form .control-buttons{margin:15px 0 0 0; *margin-top:5px; text-align:center }
+.layout-controller form .control-buttons input{width:78px; height:28px; margin:0 5px; padding:0; background-color:transparent; background-image:url(../img/default/button.png); background-position:-77px -17px; border:0; text-align:center; font-family:"나눔고딕 Bold", ngb, "굴림"; font-size:11px; color:#fff; cursor:pointer;}
+.layout-controller form .control-buttons input:hover{background-position:-168px -17px}

@@ -1,0 +1,63 @@
+<load target="css/controller.css" />
+<load target="js/controller.js" type="body" />
+<load target="js/jquery.sprintf.js" type="body" />
+<load target="js/jquery.tabSlideOut.v1.3.js" type="body" />
+
+<div class="layout-controller">
+	<a href="#" class="slideout_btn"></a>
+	<h2>CONTROL BOX <span style="font-size:11px">by <a href="http://www.xecameron.com/" target="_blank" title="Treasurej Homepage" style="color:#e6e1a8">Treasurej</a> &amp; <a href="http://www.nurigo.net" target="_blank" title="Wiley Homepage" style="color:#e6e1a8">Wiley</a></span></h2>
+	<div class="slideout-content">
+		<form action="{getUrl()}" method="post" enctype="multipart/form-data" class="content_form">
+			<input type="hidden" name="module" value="layout" />
+			<input type="hidden" name="act" value="procLayoutAdminUpdate" />
+			<input type="hidden" name="layout_srl" value="{$layout_info->layout_srl}" />
+			<input type="hidden" name="title" value="{$layout_info->layout_title}" />
+			<input type="hidden" name="layout" value="{$layout_info->layout}" />
+			<div class="control-content"></div>
+			<div class="control-buttons">
+				<input type="submit" value="{$lang->apply}" onclick="alert('{$lang->user_apply_prompt}'); return false;"|cond="$logged_info->is_admin!='Y'" onclick="if(confirm('{$lang->apply_prompt}')){return true} return false;"|cond="$logged_info->is_admin=='Y'" />
+				<input type="submit" value="{$lang->reset}" onclick="alert('{$lang->user_reset_prompt}'); return false;"|cond="$logged_info->is_admin!='Y'" onclick="if(confirm('{$lang->reset_prompt}')){control_reset_settings(this.form);} return false;"|cond="$logged_info->is_admin=='Y'" />
+			</div>
+		</form>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var info_path = '{$layout_info->path}conf/info.xml';
+	var lang_type = '{$lang_type}';
+
+	var layout_info = new Array();
+	var menus = new Array();
+	<block loop="$layout_info=>$key,$val">
+		<block cond="is_string($val)">
+			layout_info['{$key}'] = '{addcslashes(htmlspecialchars($val),"\\\'\"&\n\r<>")}';
+		</block>
+	</block>
+	<block loop="$layout_info->menu=>$key,$val">
+		var menu1 = new Array();
+		<block loop="$val=>$key2,$val2">
+			menu1['{$key2}'] = '{$val2}';
+		</block>
+		menus['{$key}'] = menu1;
+	</block>
+
+	function filestyle() {
+		jQuery('input[type=file]', '.layout-controller').fileinput();
+	}
+
+	(function($) {
+		jQuery(function($) {
+			$('.layout-controller').tabSlideOut({
+				tabHandle: '.slideout_btn', //class of the element that will be your tab
+				pathToTabImage: '{$addon_path}img/default/left_pop_login.gif', //path to the image for the tab *required*
+				imageWidth: '35px', //height of tab image *required*
+				imageHeight: '43px', //width of tab image *required*
+				tabLocation: 'right', //side of screen where tab lives, top, right, bottom, or left
+				speed: 500, //speed of animation
+				action: 'click', //options: 'click' or 'hover', action to trigger animation
+				topPos: '140px', //position from the top
+				fixedPosition: true	 //options: true makes it stick(fixed position) on scroll
+			});
+		});
+	}) (jQuery);
+</script>

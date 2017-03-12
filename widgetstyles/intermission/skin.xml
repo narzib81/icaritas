@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgetstyle>
+    <title xml:lang="ko">인터미션 위젯스타일</title>
+    <title xml:lang="en">Intermission Widget Style</title>
+    <description xml:lang="ko">인터미션 위젯스타일 스킨입니다.</description>
+    <description xml:lang="en">Intermission Widget Style</description>
+    <version>0.1</version>
+    <date>2013-11-19</date>
+    <preview>preview.gif</preview>
+
+    <author email_address="313sms@gmail.com">
+        <name xml:lang="ko">Cousin Shin</name>
+        <name xml:lang="en">Cousin Shin</name>
+    </author>
+
+    <extra_vars>
+		<group>
+			<title xml:lang="ko">위젯스타일 컬러세팅</title>
+			<title xml:lang="en">Widget Color Style Settings</title>
+         
+			<var name="ws_colorset" type="select">
+            <title xml:lang="ko">컬러 프리셋</title>
+            <title xml:lang="en">Color Preset</title>
+            <description xml:lang="ko">컬러셋을 선택하세요. 하얀색 배경을 기본으로 제작된 컬러 프리셋입니다.</description>
+            <description xml:lang="en">Choose colorset. Based on white background.</description>
+            <options>
+                <name xml:lang="ko">파란색(기본값)</name>
+                <name xml:lang="en">blue(default)</name>
+                <value>blue</value>
+            </options>
+        	</var>
+         
+			<var name="ws_custom_color" type="text">
+            <name xml:lang="ko">사용자 정의 컬러입력</name>
+            <name xml:lang="en">Custom Color</name>
+            <description xml:lang="ko">직접 컬러값을 지정하고 싶으시면 여기에 입력해주세요. (입력예시: #ffffff, #eee)</description>
+            <description xml:lang="en">Please input the color value for the widget style. (ex: #ffffff, #eee)</description>
+         </var>
+		</group>
+		
+		<group>
+			<title xml:lang="ko">위젯 스타일: 텍스트 사용시</title>
+			<title xml:lang="en">Widget Style: Text Type</title>		
+
+         <var name="ws_title" type="text">
+            <name xml:lang="ko">제목</name>
+            <name xml:lang="en">Title</name>
+            <description xml:lang="ko">위젯의 제목을 입력해주세요.</description>
+            <description xml:lang="en">Please input the title text for the widget.</description>
+         </var>
+
+         <var name="ws_more_text" type="text">
+            <name xml:lang="ko">더보기 텍스트</name>
+            <name xml:lang="en">more Text</name>
+            <description xml:lang="ko">더보기용 텍스트를 입력해 주세요. 입력하지 않으시면 출력되지 않습니다.(예제: 더보기, 전체보기, Read More, 등)</description>
+            <description xml:lang="en">Text for a 'more' link</description>
+        </var>
+		</group>
+
+		<group>
+			<title xml:lang="ko">위젯 스타일: 이미지폰트 사용시</title>
+			<title xml:lang="en">Widget Style: Image Font</title>			
+         <var name="ws_title_image" type="filebox" filter="jpg,jpeg,gif,png">
+            <name xml:lang="ko">제목 이미지 (높이 20px로 맞춰주세요)</name>
+            <name xml:lang="en">Title Image (Height of 20px image is recommanded.)</name>
+            <description xml:lang="ko">제목 이미지를 입력해주세요.</description>
+            <description xml:lang="en">Text image for the widget.</description>
+         </var>
+         <var name="ws_title_alt" type="text">
+            <name xml:lang="ko">제목 이미지 대체텍스트 입력</name>
+            <name xml:lang="en">Alternative Text For The Title Image</name>
+            <description xml:lang="ko">제목 이미지 대체텍스트를 입력해주세요.</description>
+            <description xml:lang="en">Please input the alternative text for the title image.</description>
+         </var>
+
+         <var name="ws_more_image" type="filebox" filter="jpg,jpeg,gif,png">
+            <name xml:lang="ko">더보기 이미지 (높이 13px로 맞춰주세요)</name>
+            <name xml:lang="en">"Read More" Text Image (Height of 13px image is recommanded.)</name>
+            <description xml:lang="ko">더보기 텍스트로 이미지를 사용하시려면 파일을 업로드해주세요.</description>
+            <description xml:lang="en">Text image for a 'read more' link</description>
+        </var>
+        <var name="ws_more_alt" type="text">
+           <name xml:lang="ko">더보기 이미지 대체텍스트 입력</name>
+           <name xml:lang="en">Alternative Text For The Read More Image</name>
+           <description xml:lang="ko">더보기 이미지 대체텍스트를 입력해주세요.</description>
+           <description xml:lang="en">Please input the alternative text for the "Read more image".</description>
+        </var>		  
+		</group>
+		
+		<group>
+			<title xml:lang="ko">제목과 더보기 URL 입력</title>
+			<title xml:lang="en">Title and More Urls</title>			
+	
+			<var name="ws_title_url" type="text">
+				<name xml:lang="ko">제목 URL</name>
+				<name xml:lang="en">Title URL</name>
+				<description xml:lang="ko">제목 클릭시 이동할 주소를 등록합니다. (http:// 포함한 URL를 등록합니다.)</description>
+				<description xml:lang="en">Destination of a 'Title' link. Register a URL including http://</description>
+			</var>
+			
+			<var name="ws_more_url" type="text">
+				<name xml:lang="ko">더보기 URL</name>
+				<name xml:lang="en">more URL</name>
+				<description xml:lang="ko">http:// 포함한 URL를 등록합니다.</description>
+				<description xml:lang="en">Destination of a 'more' link. Register a URL including http://</description>
+			</var>
+		</group>
+    </extra_vars>
+</widgetstyle>

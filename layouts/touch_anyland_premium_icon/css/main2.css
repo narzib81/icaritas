@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+/*--- layout (common) ---*/
+#contents { padding-bottom:30px; background:none; }
+
+/*---  ---*/
+/*--- 로그인  ---*/
+#login_area { position:fixed; width:100%; height:100%; display:none; background:url('../img/bg/bg_login.gif') repeat left top; z-index:1000; }
+#login_area .login { width:360px; height:286px; margin:200px auto; border:10px solid #eaeaea; background-color:#fff; }
+#login_area .login #login_close{ position:relative; display:block; left:330px; top:-70px; width:10px; height:10px; background:url('../img/btn/btn_login_close.gif') no-repeat;}
+#login_area .login h2 { height:56px; padding:31px 0 0 52px; }
+#login_area .login ul { overflow:hidden; width:263px; height:73px; padding-left:53px; }
+#login_area .login ul li { overflow:hidden; float:left; width:263px; padding-bottom:7px; }
+#login_area .login ul li span { float:left; width:67px; padding-top:5px; }
+#login_area .login ul li input { float:right; width:176px; height:23px; padding:0 10px; border:0; line-height:23px; background:url('../img/bg/bg_l_inpu.gif') no-repeat left top; }
+#login_area .login .btn { overflow:hidden; height:50px; padding-left:125px; padding-top:10px; width:191px; }
+#login_area .login .btn a { float:right; }
+#login_area .login .btn span { float:left; margin-top:4px; }
+#login_area .login .btn .submit{ width:82px; height:27px; background:url('../img/btn/btn_login.gif') no-repeat ; border:none; cursor:pointer;}
+#login_area .login .link { height:33px; color:#999; padding-top:20px; text-align:center; border-top:3px solid #c4c4c4; background-color:#373737; }
+#login_area .login .link a { color:#999; }
+
+
+#visual { width:950px; height:345px; padding-left:10px; margin:5px 0 5px 0; }
+.m_list { overflow:hidden; width:950px; margin-left:10px; padding:40px 0 25px 0;  } 
+.m_list li { float:left; width:300px; height:295px; margin-right:25px; background:url('../img/main/bg_m_list.gif') no-repeat left top; }
+.m_list li.last { margin-right:0; }
+.m_list li dl { width:262px; padding:24px 19px 0; }
+.m_list li dl dt { float:left; margin-bottom:3px; color:#939393; font-family:Arial; font-size:18pt; }
+.m_list li dl .cnt { display:block; float:right; margin-top:3px; height:23px; padding-right:7px; background:url('../img/main/bg_cnt_r.gif') no-repeat right top; }
+.m_list li dl .cnt strong { display:block; float:right; height:23px; padding-left:8px; color:#b9b9b9; line-height:20px; font-family:Arial; font-weight:bold; background:url('../img/main/bg_cnt_l.gif') no-repeat left top; }
+.m_list li dl .url { clear:both; color:#acacac; font:11px/13px gulim; }
+.m_list li dl .url a { color:#acacac; font:11px/13px gulim; }
+.m_list li dl .date { color:#acacac; font:11px/13px gulim; }
+.m_list li dl .thumb { margin:10px 0; }
+.m_list li dl .thumb img { width:258px; height:140px; border:2px solid #e3e3e3; }
+.m_list li dl .desc { color:#acacac; font:11px/13px gulim; letter-spacing:-1px; }
+.m_box { width:950px; height:184px; margin:25px 0 0 10px; background:url('../img/main/bg_m_box.gif') no-repeat left top; }
+.m_box .recen1 { width:414px; float:left; padding:0 0 0 15px; }
+.m_box .recen1 h2 { height:35px; padding-top:12px; font-weight:normal; color:#939393; font-size:11px; }
+.m_box .recen1 ul { overflow:hidden; width:414px; }
+.m_box .recen1 ul li { float:left; margin-right:13px; }
+.m_box .recen1 ul li img { width:110px; height:110px; border:2px solid #e3e3e3; }
+.m_box .recen2 { width:298px; float:left; }
+.m_box .recen2 h2 { height:35px; padding-top:12px; font-weight:normal; color:#939393; font-size:11px; }
+.m_box .recen2  ul { padding:7px 0 0 0; }
+.m_box .recen2  ul li { padding:0 0 12px 25px; background:url('../img/main/bul_recen.gif') no-repeat left top; }
+.m_box .recen2 ul li a { color:#999; line-height:14px; letter-spacing:-1px; }
+.m_box .recen2  ul li span { display:block; color:#c3c3c3; font-size:11px; font-family:arial; }
+.m_box .sns { float:right; width:223px; height:180px; position:relative; }
+.m_box .sns p { text-align:center; padding-top:67px; }
+.m_box .sns .btn_prev { position:absolute; left:110px; top:46px; }
+.m_box .sns .btn_next { position:absolute; left:110px; top:123px; }
+/*---  ---*/

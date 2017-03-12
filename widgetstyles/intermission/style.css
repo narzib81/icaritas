@@ -1,0 +1,55 @@
+.im_widget_header {
+    position: relative;
+    margin-bottom: 28px;
+    height: 20px;
+}
+
+.im_widget_header .widget_title a {
+    font: 20px/20px 나눔바른고딕, NanumBarunGothic, 나눔고딕, Nanumgothic, nbg, dotum, gulim, sans-serif;
+    color: #585858;
+}
+
+.im_more {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 13px;
+    font-family: 나눔바른고딕, NanumBarunGothic, 나눔고딕, Nanumgothic, nbg, dotum, gulim, sans-serif;
+    height: 20px;
+}
+
+.im_more a {
+    display: block;
+    height: 20px;
+}
+
+.im_more .label {
+    line-height: 20px;
+    margin-right: 8px;
+    color: #aaa;
+	 float:left;
+}
+
+.im_more .label img {
+    vertical-align: middle;
+}
+
+.im_more .icon {
+    float: right;
+    width: 20px;
+    height: 20px;
+    background-image: url('images/more_out.png');
+    background-repeat: no-repeat background-position:left top;
+}
+
+.im_more:hover > a .icon {
+    background-image: url('images/more_over.png');
+}
+
+.im_more .blue_bg {
+    background-color: #1999c0;
+}
+
+.im_more:hover > a .blue_t {
+    color: #1999c0;
+}
